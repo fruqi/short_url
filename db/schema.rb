@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608094751) do
+ActiveRecord::Schema.define(version: 20150608143435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,5 +22,7 @@ ActiveRecord::Schema.define(version: 20150608094751) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "urls", ["short"], name: "index_urls_on_short", using: :btree
 
 end

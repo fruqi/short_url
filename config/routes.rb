@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   root 'urls#index'
 
+  match '/:slug', to: 'urls#show', via: :get
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

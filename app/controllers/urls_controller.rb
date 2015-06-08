@@ -1,5 +1,5 @@
 class UrlsController < ApplicationController
-  before_action :set_url, only: [:show, :edit, :update, :destroy]
+  before_action :set_url, only: [:show]
 
   # GET /urls
   # GET /urls.json
@@ -10,6 +10,12 @@ class UrlsController < ApplicationController
   # GET /urls/1
   # GET /urls/1.json
   def show
+    if @url
+      redirect_to @url.original
+    else
+      flash[:error] = "Url not found"
+      redirect_to root_path
+    end
   end
 
   # GET /urls/new
@@ -28,7 +34,7 @@ class UrlsController < ApplicationController
 
     respond_to do |format|
       if @url.save
-        format.html { redirect_to @url, notice: 'Url was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Url was successfully created.' }
         format.json { render :show, status: :created, location: @url }
       else
         format.html { render :new }
@@ -64,7 +70,7 @@ class UrlsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_url
-      @url = Url.find(params[:id])
+      @url = Url.find_by(short: params[:slug])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
