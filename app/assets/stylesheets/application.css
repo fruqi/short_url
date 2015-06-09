@@ -35,6 +35,7 @@ h4 {
   font-family: 'Alegreya Sans', sans-serif;
   letter-spacing: 1px;
   color: #f8cdda;
+  text-shadow: 1px 1px white;
 }
 
 body {
@@ -101,7 +102,27 @@ input[type="submit"].button-primary:visited {
 }
 
 #notif {
-  display: none;
+  position: absolute;
+  border: 1px solid white;
+  width: 40%;
+  color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  padding: 20px;
+  top: -50px;
+  left: 50%;
+  margin-right: -50%;  
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-left: 0;
+  text-align: center;
+  transition: margin 0.5s;
+}
+
+#notif.show {
+  margin-top: 80px;
 }
 
 .toast-error {

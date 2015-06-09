@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
     if @url
       redirect_to @url.original
     else
-      flash[:error] = "Url not found"
+      flash[:error] = "Url not found :("
       redirect_to root_path
     end
 

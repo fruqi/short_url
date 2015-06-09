@@ -1,11 +1,5 @@
-<div class="container">
-  <div class="row">
-
-    <div class="twelve columns">
-      <%= render 'shared/flash_messages' %>
-    </div>
-
-  </div>
+<div id="notif">
+  <%= render 'shared/flash_messages' %>
 </div>
 
 <div class="page-wrap">
@@ -14,7 +8,7 @@
 
       <div class="twelve columns">
         <h1 class="text-center">Shorority</h1>
-        <h4 class="text-center">Shorten URL with Priority</h4> 
+        <h4 class="text-center">Shorten URL with Parity</h4> 
       </div>
 
       <%= render 'form' %>
@@ -25,3 +19,18 @@
 <footer class="site-footer">
   <div class="copyright"><p>© 2015 Amrta Kautsar Faruqi</p></div> 
 </footer>
+
+<script type="text/javascript">
+  <% if !flash.empty? %>
+
+    setTimeout(function() {
+      $("#notif").addClass("show");
+
+      setTimeout(function() {
+        $("#notif").removeClass("show");
+      }, 2000);
+
+    }, 500);
+
+  <% end %>
+</script>
