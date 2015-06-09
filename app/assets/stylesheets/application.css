@@ -11,5 +11,104 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require skeleton
+ *= require toastr
  *= require_self
  */
+
+@import url(http://fonts.googleapis.com/css?family=Sansita+One);
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+
+
+html, body {
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Sansita One', cursive;
+  font-size: 7.0em;
+  color: white;
+  text-shadow: 4px 4px #f8cdda;
+}
+
+h4 {
+  font-family: 'Alegreya Sans', sans-serif;
+  letter-spacing: 1px;
+  color: #f8cdda;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  background: #0e153a;
+  background-image: -webkit-radial-gradient(circle farthest-side at right bottom,#f8cdda,#1d2b64 80%,#0e153a);
+  background-image: -moz-radial-gradient(circle farthest-side at right bottom,#f8cdda,#1d2b64 80%,#0e153a);
+  background-image: radial-gradient(circle farthest-side at right bottom,#f8cdda,#1d2b64 80%,#0e153a);
+}
+ 
+.text-center { text-align: center; }
+
+input[type="text"] {
+  height: 50px;
+  font-size: 20px;
+}
+
+input[type="submit"].button-primary {
+  color: #f8cdda;
+  background-color: transparent;
+  border-color: #f8cdda;
+}
+
+input[type="submit"].button-primary:hover,
+input[type="submit"].button-primary:focus,
+input[type="submit"].button-primary:active,
+input[type="submit"].button-primary:visited {
+  color: #f8cdda;
+  background-color: transparent;
+  border-color: #f8cdda;
+}
+
+#main-area {
+  position: absolute;
+  padding: 20px;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  margin-left: 0;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -70px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 70px; 
+}
+
+.copyright p {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+
+#notif {
+  display: none;
+}
+
+.toast-error {
+  background-color: rgb(207, 151, 174);
+}
+
+.toast-message {
+  color: white;
+}
+

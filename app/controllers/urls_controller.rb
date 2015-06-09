@@ -4,27 +4,24 @@ class UrlsController < ApplicationController
   # GET /urls
   # GET /urls.json
   def index
-    @urls = Url.all
+    @url = Url.new
   end
 
   # GET /urls/1
   # GET /urls/1.json
   def show
+
+    puts ??*40
+    puts @url
+    puts ??*40
+
     if @url
       redirect_to @url.original
     else
       flash[:error] = "Url not found"
       redirect_to root_path
     end
-  end
 
-  # GET /urls/new
-  def new
-    @url = Url.new
-  end
-
-  # GET /urls/1/edit
-  def edit
   end
 
   # POST /urls
@@ -36,36 +33,15 @@ class UrlsController < ApplicationController
       if @url.save
         format.html { redirect_to root_path, notice: 'Url was successfully created.' }
         format.json { render :show, status: :created, location: @url }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @url.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
 
-  # PATCH/PUT /urls/1
-  # PATCH/PUT /urls/1.json
-  def update
-    respond_to do |format|
-      if @url.update(url_params)
-        format.html { redirect_to @url, notice: 'Url was successfully updated.' }
-        format.json { render :show, status: :ok, location: @url }
-      else
-        format.html { render :edit }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /urls/1
-  # DELETE /urls/1.json
-  def destroy
-    @url.destroy
-    respond_to do |format|
-      format.html { redirect_to urls_url, notice: 'Url was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -6,6 +6,4 @@ class Utility
     RAND_CHARS.shuffle[0..7].join
   end
 
-
-
 end

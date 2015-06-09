@@ -1,21 +1,12 @@
-<%= form_for(@url) do |f| %>
-  <% if @url.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@url.errors.count, "error") %> prohibited this url from being saved:</h2>
+<%= form_for @url, remote: true do |f| %>
 
-      <ul>
-      <% @url.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class="twelve columns">
+      <%= f.text_field :original, class: "u-full-width", id: "url-input" %>
     </div>
-  <% end %>
+    <div class="twelve columns text-center">
+      <%= f.submit "Shorten!", class: "button-primary" %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :original %><br>
-    <%= f.text_field :original %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

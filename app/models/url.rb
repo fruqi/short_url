@@ -2,10 +2,10 @@ class Url < ActiveRecord::Base
 
   before_create :shorten_url
 
-  validates :original, presence: true,
+  validates :original, presence: { message: "Url can't be blank yo." },
                        format:  { 
                         with: URI.regexp, 
-                        message: "Invalid url, make sure http:// or https:// exists before everthing else yo." 
+                        message: "Invalid url, please try again." 
                       }
 
   def shorten_url

@@ -1,0 +1,10 @@
+
+<% if @url.valid? %>
+  $('#url-input').val("<%= slug_url(@url.short) %>");
+<% else %>
+  <% @url.errors.messages.each do |key, messages| %>
+    <% messages.each do |message| %>
+      toastr.error("<%= message %>");
+    <% end %>
+  <% end %>
+<% end %>
