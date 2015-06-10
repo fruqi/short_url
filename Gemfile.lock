@@ -71,6 +71,11 @@ GEM
     rails-assets-skeleton (2.0.4)
     rails-assets-toastr (2.1.1)
       rails-assets-jquery (>= 1.6.3)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -121,6 +126,7 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails-assets-skeleton!
   rails-assets-toastr!
+  rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
