@@ -1,14 +1,10 @@
-<div id="notif">
-  <%= render 'shared/flash_messages' %>
-</div>
-
 <div class="page-wrap">
   <div id="main-area" class="container">
     <div class="row">
 
       <div class="twelve columns">
         <h1 class="text-center">Shorority</h1>
-        <h4 class="text-center">Shorten URL with Parity</h4> 
+        <h4 class="text-center">Shorten URL with Clarity</h4> 
       </div>
 
       <%= render 'form' %>
@@ -24,13 +20,10 @@
   <% if !flash.empty? %>
 
     setTimeout(function() {
-      $("#notif").addClass("show");
-
-      setTimeout(function() {
-        $("#notif").removeClass("show");
-      }, 2000);
-
-    }, 500);
+      <% flash.each do |message_type, message| %>
+        toastr.error("<%= message %>");
+      <% end %>
+    }, 300);
 
   <% end %>
 </script>
