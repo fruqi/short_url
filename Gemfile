@@ -36,6 +36,7 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-skeleton'
   gem 'rails-assets-toastr'
+  gem 'rails-assets-pace'
 end
 
 
